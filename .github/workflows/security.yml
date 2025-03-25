@@ -1,0 +1,8 @@
+name: security
+
+on:
+  workflow_call:
+
+jobs:
+  github-actions-scan:
+    uses: ./.github/workflows/github-actions-scan.yml
