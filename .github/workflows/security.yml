@@ -10,3 +10,8 @@ permissions:
 jobs:
   github-actions-scan:
     uses: ./.github/workflows/github-actions-scan.yml
+    permissions:
+      # same as global permission
+      contents: read
+      # required to write sarif report
+      security-events: write
