@@ -10,15 +10,18 @@ on:
     paths:
       - ".github/workflows/*"
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
 permissions:
-  security-events: write
-  # required for workflows in private repositories
   contents: read
-  actions: read
 
 jobs:
   zizmor:
     runs-on: ubuntu-latest
+    permissions:
+      # same as global permission
+      contents: read
+      # required to write sarif report
+      security-events: write
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2

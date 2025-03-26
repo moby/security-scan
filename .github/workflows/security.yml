@@ -3,6 +3,10 @@ name: security
 on:
   workflow_call:
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
+permissions:
+  contents: read
+
 jobs:
   github-actions-scan:
     uses: ./.github/workflows/github-actions-scan.yml
